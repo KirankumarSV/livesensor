@@ -1,8 +1,15 @@
 from setuptools import find_packages, setup
 
+
+HYPHEN_E_DOT = '-e .'
+
 def get_requirements()->list[str]:
     with open('requirements.txt') as f:
         requirements_list = f.read().splitlines()
+
+        if HYPHEN_E_DOT in requirements_list:
+            requirements_list.remove(HYPHEN_E_DOT)
+
     return requirements_list
 
 
