@@ -1,9 +1,10 @@
 from setuptools import find_packages, setup
+from typing import List
 
 
 HYPHEN_E_DOT = '-e .'
 
-def get_requirements()->list[str]:
+def get_requirements()->List[str]:
     with open('requirements.txt') as f:
         requirements_list = f.read().splitlines()
 
