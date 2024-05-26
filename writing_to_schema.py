@@ -15,18 +15,21 @@ dtype_to_yaml_type = {
     # Add more mappings if necessary
 }
 
+# Calculate missing percentages and identify columns with more than 70% missing
+missing = df.isna().sum().div(df.shape[0]).mul(100)
+dropcols = missing[missing > 70].index.tolist()
+
+
 # Generate the columns schema
 columns_schema = []
 numerical_columns = []
 for column in df.columns:
-    columns_schema.append({column: dtype_to_yaml_type[str(df[column].dtype)]})
+    if column not in dropcols:
+        columns_schema.append({column: dtype_to_yaml_type[str(df[column].dtype)]})
 
-    if df[column].dtype in ['int64', 'float64']:
-        numerical_columns.append(column)
+        if df[column].dtype in ['int64', 'float64']:
+            numerical_columns.append(column)
 
-# Calculate missing percentages and identify columns with more than 70% missing
-missing = df.isna().sum().div(df.shape[0]).mul(100)
-dropcols = missing[missing > 70].index.tolist()
 
 # Writing to a YAML file in the specified path
 schema_path = 'E:\\livesensor\\config\\schema.yaml'  # Ensure to use double backslashes in Windows path

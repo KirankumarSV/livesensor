@@ -1,7 +1,6 @@
 columns:
 - class: category
 - aa_000: int
-- ab_000: float
 - ac_000: float
 - ad_000: float
 - ae_000: float
@@ -74,11 +73,6 @@ columns:
 - bk_000: float
 - bl_000: float
 - bm_000: float
-- bn_000: float
-- bo_000: float
-- bp_000: float
-- bq_000: float
-- br_000: float
 - bs_000: float
 - bt_000: float
 - bu_000: float
@@ -112,7 +106,6 @@ columns:
 - co_000: float
 - cp_000: float
 - cq_000: float
-- cr_000: float
 - cs_000: float
 - cs_001: float
 - cs_002: float
@@ -173,7 +166,6 @@ columns:
 
 numerical_columns:
 - aa_000
-- ab_000
 - ac_000
 - ad_000
 - ae_000
@@ -246,11 +238,6 @@ numerical_columns:
 - bk_000
 - bl_000
 - bm_000
-- bn_000
-- bo_000
-- bp_000
-- bq_000
-- br_000
 - bs_000
 - bt_000
 - bu_000
@@ -284,7 +271,6 @@ numerical_columns:
 - co_000
 - cp_000
 - cq_000
-- cr_000
 - cs_000
 - cs_001
 - cs_002
