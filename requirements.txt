@@ -6,4 +6,6 @@ python-dotenv
 pyyaml
 certifi
 dill
+scipy
+imblearn==0.0
 -e .
